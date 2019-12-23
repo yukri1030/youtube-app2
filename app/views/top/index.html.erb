@@ -1,0 +1,52 @@
+<div class = "contents">
+  <div class = "contents-box">
+    <div class="header">
+      <h1>ようこそ</h1>
+      <a class="post" href="/top/new">投稿する</a>
+    </div>
+
+    <div class="form"> 
+      <% @comments.each do |comment|%>
+          <div class="contents_low">
+            <%= render partial: "comment", locals: { comment: comment } %>
+          <% end %> 
+          <%= paginate(@comments) %>
+        </div>
+    </div>
+  </div>
+</div> 
+
+<div class="footer">
+  <h2><a href=""></h2>
+</div>
+
+<style>
+  .header{
+   height: 50px;
+  }
+
+  .form{
+    height: 100vh;
+    width: 100vw;
+    margin: auto;
+  }
+
+  .box{
+    height: 200px;
+    width: 300px;
+    margin: auto;
+    margin-bottom: 10px;
+    text-align: center;
+    border: 1px solid lightskyblue; 
+  }
+
+  .detail_link{
+    text-decoration: none;
+  }
+  .contents_low{
+  width: 500px;
+  margin: auto;
+  margin-bottom: 50px;
+  margin-top: 30px;
+  }
+</style>
